@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formptv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c9896cdd0f.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+<br> <br>
+    <nav>
+        <h2>TS9</h2>    <br>
+      <div class="nav-left">
+            <ul>
+            <li><a href="accueil">Accueil</a></li>
+            <li><a href="programmetv">Programme TV</a></li>
+            <li><a href="direct"></a>Direct</li>
+            <li><a href="nouveautes"></a>Nouveautés</li>
+            <li><a href="apropos">A propos de nous</a></li>
+            <li><a href="recrutement">Recrutement</a></li>
+            </ul>
+            </div>
+    
+      <div class="nav-right">
+            <ul>
+            <li class="input"><input type="text" placeholder="Rechercher Un Programme"></li>
+            <li class="inscription"><a href="inscription">S'inscrire</a></li>
+            <li class="connexion"><a href="connexion">Se connecter</a></li>
+        </ul>
+            </div>
+    </nav>
+
+    <br> <br>
+    <h3>Créer Un Nouveau Programme:</h3>
+<form class="ptv">
+    <fieldset>
+    <label for="">Nom du Programme:</label>
+    <input type="text" placeholder="Entrez le nom du programme" required>
+<br><br>
+    <label for="">Type du Programme:</label>
+    <select name="select" id="type" required> 
+        <option value="etudiant">Culinaire</option>
+        <option value="salarie" >Musique/Danse</option>
+        <option value="entrepreneur">Tradition</option>
+        <option value="chomeur">Histoire</option>
+        <option value="chomeur">Débat</option>
+        <option value="autre">Autre</option>
+      </select>
+<br><br>
+    <label for="">Description:</label>
+    <textarea rows="2" cols="30" name="Description" placeholder="Décrivez le programme"> </textarea>
+    <br><br>
+    <label for="">Jour de Diffusion:</label>
+    <input type="date" placeholder="Entrez le nom du programme" required>
+    <br> <br>
+    <label for="">Heure de Diffusion:</label>
+    <input type="time" placeholder="Entrez le nom du programme" required>
+    <br> <br>
+    <label for="">Fréquence de Diffusion:</label>
+    <select name="select" id="frequence" required> 
+        <option value="etudiant">1 fois par semaine</option>
+        <option value="salarie" >2 fois par semaine</option>
+        <option value="chomeur">Du Lundi au Vendredi</option>
+        <option value="chomeur">Tous les jours</option>
+        <option value="entrepreneur">1 fois par mois</option>
+        <option value="autre">Diffusion Unique</option>
+      </select>
+<br><br>
+    <button>Enregistrer</button>
+    <br> <br>
+
+</fieldset>
+</form>
+
+<br> <br>
+
+</body>
+
+<footer>
+    <h4>Suivez nos réseaux sociaux</h4>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a> 
+    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://twitter.com/?lang=fr" target="_blank" ><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.youtube.com/?app=desktop&hl=FR"><i class="fa-brands fa-youtube"></i></a>
+<br> <br>
+    <!-- Liens utiles -->
+    <ol class="myclass">
+        <li><a href="contact">Contactez-nous</a></li>
+        <li><a href="#">Abonnez vous à notre newsletter</a></li>
+        <li><a href="#">Mentions Légales</a></li>
+        <li><a href="#">Politique de Confidentialité</a></li>
+        <li><a href="#">Gérer les cookies</a></li>
+    </ol>
+
+    <br> 
+    <p class="foot"><span id="currentyear"></span></p>
+
+</footer>
+</body>
+
+<script>
+//Afficher l'année actuelle dans le footer
+const date = new Date();
+const elementDate = document.querySelector ("#currentyear");
+elementDate.textContent += `© ${date.getFullYear()} TS9 - Tous droits réservés`;
+</script>
+
+</html>

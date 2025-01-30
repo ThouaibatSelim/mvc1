@@ -1,1 +1,0 @@
-alert("Nous utilisons des cookies, est ce bon pour vous?");

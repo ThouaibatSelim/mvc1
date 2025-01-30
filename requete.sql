@@ -1,0 +1,6 @@
+CREATE DATABASE chainetv;
+
+CREATE TABLE equipe (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, nom VARCHAR(200), prenom VARCHAR(200), poste VARCHAR(255));
+
+CREATE TABLE programmediffusion (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, nom_programme VARCHAR(200), genre VARCHAR(200), heure_diffusion TIME);
+
