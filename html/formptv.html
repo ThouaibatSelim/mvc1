@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c9896cdd0f.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>Créer un programme TV</title>
 </head>
 <body>
 <br> <br>
@@ -17,11 +17,11 @@
         <h2>TS9</h2>    <br>
       <div class="nav-left">
             <ul>
-            <li><a href="accueil">Accueil</a></li>
-            <li><a href="programmetv">Programme TV</a></li>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="ptv.html">Programme TV</a></li>
             <li><a href="direct"></a>Direct</li>
             <li><a href="nouveautes"></a>Nouveautés</li>
-            <li><a href="apropos">A propos de nous</a></li>
+            <li><a href="apropos.html">A propos de nous</a></li>
             <li><a href="recrutement">Recrutement</a></li>
             </ul>
             </div>
@@ -44,11 +44,12 @@
 <br><br>
     <label for="">Type du Programme:</label>
     <select name="select" id="type" required> 
-        <option value="etudiant">Culinaire</option>
-        <option value="salarie" >Musique/Danse</option>
-        <option value="entrepreneur">Tradition</option>
-        <option value="chomeur">Histoire</option>
-        <option value="chomeur">Débat</option>
+        <option value="--">---</option>
+        <option value="culinaire">Culinaire</option>
+        <option value="musique/danse" >Musique/Danse</option>
+        <option value="tradition">Tradition</option>
+        <option value="histoire">Histoire</option>
+        <option value="debat">Débat</option>
         <option value="autre">Autre</option>
       </select>
 <br><br>
@@ -63,12 +64,13 @@
     <br> <br>
     <label for="">Fréquence de Diffusion:</label>
     <select name="select" id="frequence" required> 
-        <option value="etudiant">1 fois par semaine</option>
-        <option value="salarie" >2 fois par semaine</option>
-        <option value="chomeur">Du Lundi au Vendredi</option>
-        <option value="chomeur">Tous les jours</option>
-        <option value="entrepreneur">1 fois par mois</option>
-        <option value="autre">Diffusion Unique</option>
+        <option value="---">---</option>
+        <option value="1 fois par semaine">1 fois par semaine</option>
+        <option value="2 fois par semaine" >2 fois par semaine</option>
+        <option value="du lundi au vendredi">Du Lundi au Vendredi</option>
+        <option value="tous les jours">Tous les jours</option>
+        <option value="1 fois par mois">1 fois par mois</option>
+        <option value="diffusion unique">Diffusion Unique</option>
       </select>
 <br><br>
     <button>Enregistrer</button>

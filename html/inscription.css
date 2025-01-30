@@ -15,10 +15,6 @@ h2 {
     font-size: 30px;
 }
 
-h3{
-    color: #FFCC00;
-}
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -84,81 +80,6 @@ input {
     background-color: rgb(53, 47, 47);
     color: #05944c;
 
-}
-
-h3{
-    padding-left: 10px;
-}
-
-form{
-    margin-bottom: 30px;  /*espace sous le formulaire */
-    margin-left: 30px;
-}
-
-fieldset {
-    background-color: #FFCC00;
-    color: #333;
-    padding: 20px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(219, 121, 121, 0.1);
-    width: 80%;  /* Largeur du formulaire */
-    max-width: 500px;  /* Largeur maximale du formulaire */
-    margin-bottom: 30px;  /* Réduit l'espace sous le formulaire */
-    padding: 20px;
-}
-
-fieldset input{
-    background-color: #FAF5E9;
-    color: #333;
-}
-
-fieldset input:focus{
-    background-color: #b8f0d4;
-}
-
-fieldset select:focus{
-    background-color: #b8f0d4;
-}
-
-fieldset textarea:focus{
-    background-color: #b8f0d4;
-}
-
-fieldset button:active{
-    transform: scale();
-}
-
-fieldset button:hover{
-    background-color: #b8f0d4;
-}
-
-
-fieldset select{
-    font-family: Kanit, sans-serif;
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 2px;
-    border: #FAF5E9;
-}
-
-fieldset button {
-    font-family: Kanit, sans-serif;
-    color: #333;
-    background-color: #FAF5E9;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: inline-block; /* Permet d'éviter qu'il prenne toute la largeur */
-}
-
-fieldset textarea{
-    font-family: Kanit, sans-serif;
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 2px;
-    border: #FAF5E9;   
 }
 
 footer {
