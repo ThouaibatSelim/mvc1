@@ -1,0 +1,18 @@
+footer {
+    background-color: #05944c;
+    text-align: center;
+    padding: 5px;
+}
+
+ol {
+    text-align: justify;
+    display: flex;
+    gap: 20px;
+    padding-left: 200px;
+    margin: 0;
+}
+
+a i{
+    font-size: 30px;
+    width: 40px;
+}

@@ -3,8 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" href="css/formptv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c9896cdd0f.js" crossorigin="anonymous"></script>
+    <title>Créer un programme TV</title>
 </head>
+<%- include('partials/navbar') %>
+
 <body>
+    <br> <br> <br> <br>
+    <h3>Créer Un Nouveau Programme:</h3>
+<form class="ptv">
+    <fieldset>
+    <label for="">Nom du Programme:</label>
+    <input type="text" placeholder="Entrez le nom du programme" required>
+<br><br>
+    <label for="">Type du Programme:</label>
+    <select name="select" id="type" required> 
+        <option value="--">---</option>
+        <option value="culinaire">Culinaire</option>
+        <option value="musique/danse" >Musique/Danse</option>
+        <option value="tradition">Tradition</option>
+        <option value="histoire">Histoire</option>
+        <option value="debat">Débat</option>
+        <option value="autre">Autre</option>
+      </select>
+<br><br>
+    <label for="">Description:</label>
+    <textarea rows="2" cols="30" name="Description" placeholder="Décrivez le programme"> </textarea>
+    <br><br>
+    <label for="">Jour de Diffusion:</label>
+    <input type="date" placeholder="Entrez le nom du programme" required>
+    <br> <br>
+    <label for="">Heure de Diffusion:</label>
+    <input type="time" placeholder="Entrez le nom du programme" required>
+    <br> <br>
+    <label for="">Fréquence de Diffusion:</label>
+    <select name="select" id="frequence" required> 
+        <option value="---">---</option>
+        <option value="1 fois par semaine">1 fois par semaine</option>
+        <option value="2 fois par semaine" >2 fois par semaine</option>
+        <option value="du lundi au vendredi">Du Lundi au Vendredi</option>
+        <option value="tous les jours">Tous les jours</option>
+        <option value="1 fois par mois">1 fois par mois</option>
+        <option value="diffusion unique">Diffusion Unique</option>
+      </select>
+<br><br>
+    <button>Enregistrer</button>
+    <br> <br>
+
+</fieldset>
+</form>
+
+<br> <br>
+
 </body>
+<%- include('partials/footer') %>
+
 </html>

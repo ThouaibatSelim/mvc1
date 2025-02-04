@@ -1,0 +1,11 @@
+.video{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+h3{
+    text-align: center;
+    font-size: x-large;
+    color: #FFCC00;
+}

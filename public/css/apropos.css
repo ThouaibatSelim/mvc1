@@ -1,0 +1,50 @@
+/* Body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(53, 47, 47);
+    color: #FAF5E9;
+    font-family: Kanit, sans-serif;
+}
+
+h6{
+    margin-top: 60px;
+    color: #FFCC00;
+    font-size: x-large;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: center;
+}
+
+.famille{
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: x-large;
+}
+
+.cards-container {
+    display: flex; /* Alignement en ligne */
+    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 20px; /* Espacement entre les cartes */
+    flex-wrap: wrap; /* Permet le passage à la ligne si l'écran est trop petit */
+  }
+  
+  .card {
+    /* Ajoute un effet "card" */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px; /* Assure que les cartes ont une taille uniforme */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  
