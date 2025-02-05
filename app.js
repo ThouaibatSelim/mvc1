@@ -10,7 +10,7 @@ const connection = {
     host : 'localhost',
     user : 'root',
     password : 'mythouaiL9222',
-    port : 3005,
+    port : 3306,
     database : 'chainetv'
 };
 
@@ -19,6 +19,8 @@ app.set("views", "./views"); //emplacement
 app.set("view engine", "ejs"); //moteur
 
 app.use(express.static("public"));
+app.use(myConnection( mysql2, connection, "pool"));
+
 
 // accueil
 app.get("/accueil", (req, res) => {
@@ -28,9 +30,35 @@ app.get("/accueil", (req, res) => {
 
 //programme tv
 app.get("/ptv", (req, res) => {
-    //renvoyer la page accueil
-        res.render("ptv");
+
+    req.getConnection((erreur, connection) => {
+        if(erreur) {
+            console.log(erreur);
+        } else{
+            connection.query("SELECT * FROM programmediffusion", [], (err, resultat) => {
+                if (err){
+                    console.log(err);
+                } else {
+                    console.log("resultat: ", resultat);
+                    res.render("ptv", {resultat});
+                }
+
+                })
+            }
+        })
     });
+
+
+
+
+
+
+
+
+
+
+
+
 
 //recrutement
 app.get("/recrutement", (req, res) => {
@@ -75,4 +103,4 @@ app.get("/inscription", (req, res) => {
         res.render("inscription");
     });
 
-    module.exports = app;
+module.exports = app;

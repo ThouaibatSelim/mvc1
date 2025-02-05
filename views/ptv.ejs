@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,24 +18,19 @@
     <h2>Programme TV</h2>
     <table>
         <thead>
-            <th>Lundi</th>
+        <!--Lundi-->  
+        
+        <th>Lundi</th>  
         </thead>
-        <tbody>
-            <tr><td>08h00 - Halé Halélé - Contes & Légendes : Les anciens racontent les histoires qui ont bercé Mayotte.</td></tr>
-            
-            <tr><td>10h00 - Maoré Ya Jana Na Ya Lewo:
-                Un documentaire sur l’évolution des traditions et des modes de vie.</td></tr>
-                <tr>
-                    <td>12h00 - Narilé: Emission Culinaire</td>
-                </tr>
 
-            <tr><td>15h00 - M'maoré - Poésie & Chants traditionnels 
-                Les plus beaux poèmes et chants mahorais récités par des artistes locaux.</td></tr>
-                
-            <tr><td>20h30 - Le Grand Débat Culturel:
-                Discussion sur la préservation du patrimoine culturel mahorais.</td></tr>
+        <tbody>
+            <% resultat.forEach (l => { %>
+                <tr> <td><%= l.heure_diffusion %> - <%= l.nom_programme %> - <%= l.description %></td></tr>
+                <% }) %>
+
     <br>
 
+<!-- Mardi -->
     <th>Mardi</th>
     <tr>
         <td>07h30 - Kawéni Art - Le Tressage en Feuilles de Cocotier:
@@ -48,14 +43,20 @@
     <tr>
         <td>12h00 - Narilé: Emission Culinaire</td>
     </tr>
+
+    <tr>
         <td>16h30 - Artisans de l'île : Portraits d’artisans locaux mettant en valeur leur savoir-faire et leur passion.</td>
-    </tr></td>
     </tr>
     
+    <tr>
+        <td>20h00 - Histoires de Mélodies:
+            Analyse des origines et des influences de la musique mahoraise</td>
+    </tr>
+
+    <!-- Mercredi -->
         <th>Mercredi</th>
         <tr>
-            <td>08h00 - Apprentis Mbiwi : Apprendre à Jouer & Danser
-            Un atelier interactif sur le Mbiwi, la danse et percussions de Mayotte.</td>
+            <td>08h00 - Apprentis Mbiwi - Apprendre à Jouer & Danser: Un atelier interactif sur le Mbiwi.</td>
         </tr>
             <tr>
                 <td>12h00 - Narilé: Emission Culinaire</td>
@@ -74,12 +75,7 @@
                 Les meilleurs artistes de l’île sur scène.</td>
         </tr>
 
-        <tr>
-            <td>22h00 - Histoires de Mélodies:
-                Analyse des origines et des influences de la musique mahoraise</td>
-        </tr>
-
-
+        <!-- Jeudi -->
         <th>Jeudi</th>
         <tr>
             <td>06h00 - Narilawé - Les Monts et Légendes:
@@ -102,11 +98,15 @@
         <tr><td>20h30 - Le Grand Débat Culturel :
             Discussion sur la préservation du patrimoine culturel mahorais.</td></tr>
 
+            <!-- Vendredi -->
         <th>Vendredi</th>
             <tr>
             <td>07h00 - Les Petits Mahorais : Apprentissages Ancestraux 
                 Les enfants découvrent les métiers et traditions d’antan.</td>
             </tr>   
+
+            <tr><td>10h00 - Maoré Ya Jana Na Ya Lewo:
+                Un documentaire sur l’évolution des traditions et des modes de vie.</td></tr>
             
             <tr>
                 <td>12h00 - Narilé: Emission Culinaire</td>
@@ -127,9 +127,14 @@
                 </tr>
                 
         
+                <!-- Samedi -->
         <th>Samedi</th>
         <tr>
-            <td>09h00 - Haroussi : Entre Tradition & Modernité 
+            <td>08h00 - Apprentis Mbiwi - Apprendre à Jouer & Danser: Un atelier interactif sur le Mbiwi.</td>
+        </tr>
+
+        <tr>
+            <td>10h00 - Haroussi : Entre Tradition & Modernité 
                 Plongée dans une cérémonie de mariage typique.</td>
         </tr>
         <tr>
@@ -151,7 +156,7 @@
                 Concerts et spectacles pour terminer la semaine en beauté.</td>
             </tr>
                 
-
+<!-- Dimanche -->
         <th>Dimanche</th>
         <tr>
             <td>08h00 - Grands Personnages de Mayotte -
