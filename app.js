@@ -50,15 +50,6 @@ app.get("/ptv", (req, res) => {
         })
     });
 
-
-
-//recrutement
-app.get("/recrutement", (req, res) => {
-    //renvoyer la page accueil
-        res.render("recrutement");
-    });
-
-
 //contact
 app.get("/contact", (req, res) => {
     //renvoyer la page accueil
@@ -75,12 +66,6 @@ app.get("/direct", (req, res) => {
 app.get("/nouveautes", (req, res) => {
     //renvoyer la page accueil
         res.render("nouveautes");
-    });
-
-//formulaire programme tv
-app.get("/formptv", (req, res) => {
-    //renvoyer la page accueil
-        res.render("formptv");
     });
 
 
@@ -105,19 +90,30 @@ app.get("/apropos", (req, res) => {
         })
     });
 
+    //formulaire programme tv
+app.post("/formptv", (req, res) => {
+    //renvoyer la page accueil
+        res.render("formptv");
+    });
+
+
+//recrutement
+app.post("/recrutement", (req, res) => {
+    //renvoyer la page accueil
+        res.render("recrutement");
+    });
+
 // Connexion
-app.get("/connexion", (req, res) => {
+app.post("/connexion", (req, res) => {
     //renvoyer la page connexion
         res.render("connexion");
     });
 
 //Inscription
-app.get("/inscription", (req, res) => {
+app.post("/inscription", (req, res) => {
     //renvoyer la page inscription
         res.render("inscription");
     });
-
-
 
 // export de l'application
 module.exports = app;
