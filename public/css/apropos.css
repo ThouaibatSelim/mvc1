@@ -10,6 +10,7 @@ html, body {
     font-family: Kanit, sans-serif;
 }
 
+/* h6 */
 h6{
     margin-top: 60px;
     color: #FFCC00;
@@ -19,6 +20,7 @@ h6{
     text-align: center;
 }
 
+/* phrase de fin de page */
 .famille{
     text-align: center;
     padding-right: 50px;
@@ -26,6 +28,7 @@ h6{
     font-size: x-large;
 }
 
+/* cartes */
 .cards-container {
     display: flex; /* Alignement en ligne */
     justify-content: center; /* Centre les cartes horizontalement */
@@ -44,6 +47,7 @@ h6{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
+/* texte cartes */
   .container {
     padding: 2px 16px;
   }

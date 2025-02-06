@@ -1,3 +1,4 @@
+/* body */
 body {
     height: 80%;
     margin: 0;
@@ -9,6 +10,7 @@ body {
     text-align: center;
 }
 
+/* formulaire */
 .formulaire{
     margin-top: 500px;
 }
@@ -37,6 +39,7 @@ fieldset {
     text-align: center;
 }
 
+/* input */
 input {
     padding: 10px 20px;
     border-radius: 2px;
@@ -55,6 +58,7 @@ fieldset input:focus {
     background-color: #b8f0d4;
 }
 
+/* bouton */
 .submit-btn {
     font-family: Kanit, sans-serif;
     color: #333;
@@ -69,4 +73,8 @@ fieldset input:focus {
 
 .submit-btn:hover {
     background-color: #b8f0d4;
+}
+
+.submit-btn:active{
+    transform: scale(0.9);
 }

@@ -1,4 +1,4 @@
-
+/* Body */
 html, body {
     height: 100%;
     margin: 0;
@@ -10,13 +10,14 @@ html, body {
     font-family: Kanit, sans-serif;
 } 
 
+/* h1 */
 h1 {
     color: #FFCC00;
     text-align: center;
     padding: 50px 50px;
 }
 
-
+/* main page */
 .main-content {
     flex: 1;
     width: 100%;
@@ -25,7 +26,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 50px);}
+    min-height: calc(100vh - 50px);} 
 
 
 

@@ -1,17 +1,23 @@
+/* footer */
 footer {
     background-color: #05944c;
     text-align: center;
     padding: 5px;
 }
 
-ol {
-    text-align: justify;
+/* liste */
+.myclass {
     display: flex;
-    gap: 20px;
-    padding-left: 200px;
-    margin: 0;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Alignement horizontal */
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 20px; /* Espace entre les éléments */
 }
 
+/* icones */
 a i{
     font-size: 30px;
     width: 40px;
