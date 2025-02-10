@@ -86,3 +86,4 @@ INSERT INTO programmediffusion (nom_programme, type_programme, jour_diffusion, h
 -- Utilisateur 
 CREATE TABLE utilisateur (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, prenom_utilisateur VARCHAR(200), nom_utilisateur VARCHAR(200), adressemail VARCHAR(200), motdepasse VARCHAR(200));
 
+ALTER TABLE utilisateur RENAME COLUMN adressemail to email;
