@@ -7,6 +7,17 @@ const myConnection = require("express-myconnection");
 //app type express
 const app = express();
 
+const authRoutes = require("./routes/auth");
+const accueilRoutes = require("./routes/accueil");
+const aproposRoutes = require("./routes/apropos" );
+const contactRoutes = require("./routes/contact");
+const directRoutes = require("./routes/direct");
+const formptvRoutes = require("./routes/formptv");
+const inscriptionRoutes = require("./routes/inscription");
+const nouveautesRoutes = require("./routes/nouveautes");
+const ptvRoutes = require("./routes/ptv");
+const recrutementRoutes = require("./routes/recrutement");
+
 //connection base de données
 const connection = {
     host : 'localhost',
@@ -22,6 +33,8 @@ app.set("view engine", "ejs"); //moteur
 
 app.use(express.static("public"));
 app.use(myConnection( mysql2, connection, "pool"));
+
+
 
 
 // // accueil
@@ -69,7 +82,7 @@ app.use(myConnection( mysql2, connection, "pool"));
 //     });
 
 
-// //A propos
+//A propos
 // app.get("/apropos", (req, res) => {
 //     //renvoyer la page à propos de nous
 
@@ -118,6 +131,14 @@ app.use(myConnection( mysql2, connection, "pool"));
 
 app.use('/', authRoutes);
 app.use('/', accueilRoutes);
+app.use('/', aproposRoutes);
+app.use('/', contactRoutes);
+app.use('/', directRoutes);
+app.use('/', formptvRoutes);
+app.use('/', inscriptionRoutes);
+app.use('/', nouveautesRoutes);
+app.use('/', ptvRoutes);
+app.use('/', recrutementRoutes);
 
 // export de l'application
 module.exports = app;

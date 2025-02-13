@@ -1,24 +1,35 @@
 module.exports = { 
+   
+   loginView: (req, res) => {
+    res.render("connexion");
+   },
+
     registerUtilisateur: async (req, res) => {
-        let requeteSQL = "INSERT INTO utilisateur(id, email, motdepasse);"
-        let ordreDonnees = [null, email, motdepasse];
+        console.log("Register pass *********");
+
+        const { email, password } = req.body;
     
-
-req.getConnection((erreur, connection) => {
-    if(erreur) {
-        console.log(erreur);
-    } else{
-        connection.query(requeteSQL, ordreDonnees, (err)
-
-            if(err){
-                console.log(err);
-            } else {
-                console.log("Création réussie ==")
-                res.redirect("/");
+        db.query('SELECT * FROM utilisateur WHERE email = ?', [email], async (err, results) =>{
+            if(err) {
+                console.error(err);
+                return res.send('Erreur de connexion');
             }
+
+            if (results.length === 0) {
+                return res.send('utilisateur non trouvé');
+            }
+
+            const utilisateur = results[0];
+
+            const match = await bcrypt.compare(password, utilisateur.motdepasse);
+
+            if (match) {
+                res.send('connexion réussie!');
+            } else{
+                res.send('Email ou mot de passe incorrect');
+            }
+
         });
 
     }
-
-});
-
+};
