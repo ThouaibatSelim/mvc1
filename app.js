@@ -7,6 +7,9 @@ const myConnection = require("express-myconnection");
 //app type express
 const app = express();
 
+app.use(express.json());  // Pour les requêtes en JSON
+app.use(express.urlencoded({ extended: true }));
+
 const authRoutes = require("./routes/auth");
 const accueilRoutes = require("./routes/accueil");
 const aproposRoutes = require("./routes/apropos" );

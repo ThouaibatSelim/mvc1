@@ -1,33 +1,87 @@
-module.exports = {
+// module.exports = {
  
-    signUp: async (req, res) => {
-        const {nom, prenom, email, motdepasse} = req.body
+//     signUp: async (req, res) => {
+//         const {nom, prenom, email, motdepasse} = req.body
 
-        console.log("nom :", nom);
-        console.log("prenom :", prenom);
-        console.log("email :", email);
-        console.log("mot de passe :", motdepasse);
+//         console.log("nom :", nom);
+//         console.log("prenom :", prenom);
+//         console.log("email :", email);
+//         console.log("mot de passe :", motdepasse);
 
 
-            let requeteSQL = "INSERT INTO utilisateur(id, nom_utilisateur, prenom_utilisateur, email, motdepasse) VALUES (?,?,?,?);"
-            let ordreDonnees = [null, nom, prenom, email, motdepasse];
+//             let requeteSQL = "INSERT INTO utilisateur(id, nom_utilisateur, prenom_utilisateur, email, motdepasse) VALUES (?,?,?,?);"
+//             let ordreDonnees = [null, nom, prenom, email, motdepasse];
         
 
-            req.getConnection((erreur, connection) => {
-                if(err) {
-                    console.log(erreur);
-                } else {
-                    connection.query(requeteSQL, ordreDonnees,(err, nouvelUtilisateur) => {
-                        if(err) {
-                            console.log(err);
-                        } else {
-                            console.log("Création réussie == ");
-                            res.redirect("/")
-                        }
-                    });
-                }
-            });
+//             req.getConnection((erreur, connection) => {
+//                 if(err) {
+//                     console.log(erreur);
+//                 } else {
+//                     connection.query(requeteSQL, ordreDonnees,(err, nouvelUtilisateur) => {
+//                         if(err) {
+//                             console.log(err);
+//                         } else {
+//                             console.log("Création réussie == ");
+//                             res.redirect("/")
+//                         }
+//                     });
+//                 }
+//             });
     
         
+//     }
+// };
+
+const bcrypt = require("bcrypt");
+
+module.exports = {
+
+    showSignUpForm: (req, res) => {
+        res.render("inscription"); // Assurez-vous d'avoir un fichier `views/inscription.ejs`
+    },
+
+    signUp: async (req, res) => {
+        try {
+            const { nom, prenom, email, motdepasse } = req.body;
+
+            // Vérification des champs obligatoires
+            if (!nom || !prenom || !email || !motdepasse) {
+                return res.status(400).json({ message: "Tous les champs sont requis." });
+            }
+
+            console.log("nom :", nom);
+            console.log("prenom :", prenom);
+            console.log("email :", email);
+            console.log("mot de passe (avant hashage) :", motdepasse);
+
+            // Hachage du mot de passe
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(motdepasse, saltRounds);
+
+            let requeteSQL = 
+                "INSERT INTO utilisateur(nom_utilisateur, prenom_utilisateur, email, motdepasse) VALUES (?, ?, ?, ?);";
+            let ordreDonnees = [nom, prenom, email, hashedPassword];
+
+            req.getConnection((erreur, connection) => {
+                if (erreur) {
+                    console.error("Erreur de connexion à la base de données :", erreur);
+                    return res.status(500).json({ message: "Erreur serveur." });
+                }
+
+                connection.query(requeteSQL, ordreDonnees, (err, resultat) => {
+                    if (err) {
+                        console.error("Erreur lors de l'inscription :", err);
+                        return res.status(500).json({ message: "Erreur lors de l'inscription." });
+                    }
+
+                    console.log("Inscription réussie :", resultat);
+                    res.redirect("/");
+                });
+            });
+
+        } catch (error) {
+            console.error("Erreur dans signUp :", error);
+            res.status(500).json({ message: "Une erreur est survenue." });
+        }
     }
 };

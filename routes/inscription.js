@@ -4,6 +4,7 @@ const inscriptionController = require("../controllers/inscription");
 
 const router = express.Router();
 
-router.get("/inscription", inscriptionController.signUp);
+router.post("/inscription", inscriptionController.signUp);
+router.get("/inscription", inscriptionController.showSignUpForm);
 
 module.exports = router;
