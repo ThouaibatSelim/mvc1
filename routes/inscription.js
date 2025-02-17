@@ -1,8 +1,9 @@
 const express = require("express");
 
+const router = express.Router();
+
 const inscriptionController = require("../controllers/inscription");
 
-const router = express.Router();
 
 router.post("/inscription", inscriptionController.signUp);
 router.get("/inscription", inscriptionController.showSignUpForm);

@@ -37,17 +37,20 @@ const bcrypt = require("bcrypt");
 module.exports = {
 
     showSignUpForm: (req, res) => {
-        res.render("inscription"); // Assurez-vous d'avoir un fichier `views/inscription.ejs`
+        res.render("inscription");
     },
 
     signUp: async (req, res) => {
+
+        console.log("Données reçues du formulaire :", req.body);
+
         try {
             const { nom, prenom, email, motdepasse } = req.body;
 
             // Vérification des champs obligatoires
-            if (!nom || !prenom || !email || !motdepasse) {
-                return res.status(400).json({ message: "Tous les champs sont requis." });
-            }
+            // if (!nom || !prenom || !email || !motdepasse) {
+            //     return res.status(400).json({ message: "Tous les champs sont requis." });
+            // }
 
             console.log("nom :", nom);
             console.log("prenom :", prenom);
@@ -80,7 +83,7 @@ module.exports = {
             });
 
         } catch (error) {
-            console.error("Erreur dans signUp :", error);
+            console.error("Erreur :", error);
             res.status(500).json({ message: "Une erreur est survenue." });
         }
     }
