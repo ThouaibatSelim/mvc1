@@ -10,16 +10,14 @@ const app = express();
 app.use(express.json());  // Pour les requêtes en JSON
 app.use(express.urlencoded({ extended: true }));
 
-const authRoutes = require("./routes/auth");
-const accueilRoutes = require("./routes/accueil");
-const aproposRoutes = require("./routes/apropos" );
-const contactRoutes = require("./routes/contact");
-const directRoutes = require("./routes/direct");
-const formptvRoutes = require("./routes/formptv");
-const inscriptionRoutes = require("./routes/inscription");
-const nouveautesRoutes = require("./routes/nouveautes");
-const ptvRoutes = require("./routes/ptv");
-const recrutementRoutes = require("./routes/recrutement");
+const session = require("express-session");
+
+app.use(session({
+    secret: "monSecretUltraSecurise",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }  // false si pas en HTTPS
+}));
 
 //connection base de données
 const connection = {
@@ -37,7 +35,51 @@ app.set("view engine", "ejs"); //moteur
 app.use(express.static("public"));
 app.use(myConnection( mysql2, connection, "pool"));
 
+//ROUTES
 
+//connexion
+const authRoutes = require("./routes/auth");
+app.use('/', authRoutes);
+
+//accueil
+const accueilRoutes = require("./routes/accueil");
+app.use('/', accueilRoutes);
+
+//a propos
+const aproposRoutes = require("./routes/apropos" );
+app.use('/', aproposRoutes);
+
+//contact
+const contactRoutes = require("./routes/contact");
+app.use('/', contactRoutes);
+
+//direct
+const directRoutes = require("./routes/direct");
+app.use('/', directRoutes);
+
+//formptv
+const formptvRoutes = require("./routes/formptv");
+app.use('/', formptvRoutes);
+
+//inscription
+const inscriptionRoutes = require("./routes/inscription");
+app.use('/', inscriptionRoutes);
+
+//nouveautés
+const nouveautesRoutes = require("./routes/nouveautes");
+app.use('/', nouveautesRoutes);
+
+//programme tv
+const ptvRoutes = require("./routes/ptv");
+app.use('/', ptvRoutes);
+
+//recrutement
+const recrutementRoutes = require("./routes/recrutement");
+app.use('/', recrutementRoutes);
+
+//profil
+const profilRoutes = require("./routes/profil");
+app.use("/", profilRoutes);
 
 
 // // accueil
@@ -131,17 +173,6 @@ app.use(myConnection( mysql2, connection, "pool"));
 //         res.render("inscription");
 //     });
 
-
-app.use('/', authRoutes);
-app.use('/', accueilRoutes);
-app.use('/', aproposRoutes);
-app.use('/', contactRoutes);
-app.use('/', directRoutes);
-app.use('/', formptvRoutes);
-app.use('/', inscriptionRoutes);
-app.use('/', nouveautesRoutes);
-app.use('/', ptvRoutes);
-app.use('/', recrutementRoutes);
 
 // export de l'application
 module.exports = app;
