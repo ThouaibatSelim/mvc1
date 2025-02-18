@@ -57,3 +57,7 @@ button a {
     text-decoration: none; /* Supprime le soulignement */
     font-weight: bold;
 }
+
+button:active{
+        transform: scale(0.9);
+    }

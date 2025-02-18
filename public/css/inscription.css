@@ -47,7 +47,8 @@ fieldset input {
 }
 
 fieldset input:focus {
-    background-color: #b8f0d4;
+    background-color: #333;
+    color: white;
 }
 
 /* bouton */
@@ -65,7 +66,8 @@ fieldset input:focus {
 }
 
 .submit-btn:hover {
-    background-color: #b8f0d4;
+    background-color: #333;
+    color: white;
 }
 
 .submit-btn:active{

@@ -8,37 +8,118 @@ html, body {
     background-color: rgb(53, 47, 47);
     color: #FAF5E9;
     font-family: Kanit, sans-serif;
-} 
+    } 
 
-/* h1 */
-h1 {
-    margin-top: 50px;
-    color: #FFCC00;
-    text-align: center;
-    padding: 50px 50px;
-}
+    /* h1 */
+    h1 {
+        margin-top: 50px;
+        color: #FFCC00;
+        text-align: center;
+        padding: 50px 50px;
+    }
 
-/* bouton */
-.submit-btn {
-    font-family: Kanit, sans-serif;
-    background-color: #FFCC00;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-}
+    /* bouton */
+    .submit-btn {
+        font-family: Kanit, sans-serif;
+        background-color: #FFCC00;
+        border: none;
+        font-size: 21px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+    }
 
-.submit-btn:hover {
-    background-color: #b8f0d4;
-}
+    .submit-btn:active{
+        transform: scale(0.9);
+    }
 
-.submit-btn:active{
-    transform: scale(0.9);
-}
+    .submit-btn a:hover {
+        background-color: #333;
+        color: white;
+    }
 
-button a {
+
+    button{
+        font-family: Kanit, sans-serif;
+    }
+
+    button a {
+        color: rgb(53, 47, 47);
+        text-decoration: none;
+    }
+
+    /*side nav*/
+    .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
     color: rgb(53, 47, 47);
+    background-color: #FFCC00;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
 
+    /* Augmenter la largeur de la sidenav */
+    .sidenav.open {
+        width: 400px;
+    }
+
+    /* Links inside sidenav */
+    .sidenav ol {
+        list-style-type: none;
+        padding: 20px;
+        margin-top: 100px;
+}
+
+    .sidenav li {
+        padding: 15px 10px;
+        font-size: 20px;
+}
+
+    /* links */
+    .sidenav a {
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(53, 47, 47);
+        display: block;
+        transition: 0.3s;
+        padding: 10px;
+        border-radius: 5px;
+}
+
+/* hover */
+    .sidenav a:hover {
+        background-color: #333;
+        color: white;
+}
+
+    /*close button */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 36px;
+        cursor: pointer;
+}
+
+    /*open button */
+    .open-btn {
+        margin-bottom: 150px;
+        font-size: 35px;
+        cursor: pointer;
+        color: #FFCC00;
+        background-color: rgb(53, 47, 47);
+        padding: 10px 15px;
+        border: none;
+        position: fixed;
+        top: 100px; /* Décalage vers le bas pour éviter la barre de navigation */
+        left: 20px;
+        z-index: 1001;
+        border-radius: 5px;
 }

@@ -81,6 +81,9 @@ app.use('/', recrutementRoutes);
 const profilRoutes = require("./routes/profil");
 app.use("/", profilRoutes);
 
+// const modifierprofilRoutes = require("./routes/modifierprofil");
+// app.use("/",  modifierprofilRoutes);
+
 
 // // accueil
 // app.get("/accueil", (req, res) => {

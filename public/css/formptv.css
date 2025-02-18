@@ -51,15 +51,18 @@ fieldset input{
 }
 
 fieldset input:focus{
-    background-color: #b8f0d4;
+    background-color: #333;
+    color: white;
 }
 
 fieldset select:focus{
-    background-color: #b8f0d4;
+    background-color: #333;
+    color: white;
 }
 
 fieldset textarea:focus{
-    background-color: #b8f0d4;
+    background-color: #333;
+    color: white;
 }
 
 fieldset button:active{
@@ -67,7 +70,8 @@ fieldset button:active{
 }
 
 fieldset button:hover{
-    background-color: #b8f0d4;
+    background-color: #333;
+    color: white;
 }
 
 

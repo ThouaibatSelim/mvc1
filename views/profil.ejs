@@ -8,19 +8,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c9896cdd0f.js" crossorigin="anonymous"></script>
-    <title>Profil</title>
+    <title>Mon Profil</title>
 </head>
 <%- include('partials/navbar') %>
 
 <body>
     <br> <br> <br> <br>
-    <h1>Bienvenue <%= prenom %> <%= nom %> !</h1>
-    <p>Email : <%= email %></p>
-   <button class="submit-btn"><a href="/logout">Se déconnecter</a></button> 
+
+    <!-- Bouton pour ouvrir la sidenav -->
+    <button class="open-btn" onclick="openNav()">☰</button>
+    <br> <br>
+    <!-- Side navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ol class="profilnav">
+            <li><strong>Profil de :</strong> <%= prenom %> <%= nom %></li>
+            <br><br>
+            <li><strong>Email :</strong> <%= email %></li>
+            <br><br> 
+            <li><strong>Mot de passe :</strong> ................</li>
+            <br><br>
+            <li><a href="modifierprofil"><strong>Modifier mon profil</strong></a></li>
+            <br>
+            <li><a href="/logout"><strong>Se déconnecter</strong></a></li>
+        </ol>
+    </div>
+
+    <!-- Main content -->
+    <div id="main">
+        <h1>Bienvenue dans votre profil <%= prenom %> <%= nom %> !</h1>
+        <br><br><br><br>
+    </div>
+
+   <button class="submit-btn"><a href="/logout"> <strong>Se déconnecter</strong></a></button> 
 <br> <br> <br> <br>
 
 
 </body>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").classList.add("open");
+        document.getElementById("main").style.marginLeft = "400px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").classList.remove("open");
+        document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
+
 
 <%- include('partials/footer') %>
 
