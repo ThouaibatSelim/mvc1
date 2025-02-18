@@ -45,12 +45,11 @@ module.exports = {
         console.log("Données reçues du formulaire :", req.body);
 
         try {
-            const { nom, prenom, email, motdepasse } = req.body;
 
-            // Vérification des champs obligatoires
-            // if (!nom || !prenom || !email || !motdepasse) {
-            //     return res.status(400).json({ message: "Tous les champs sont requis." });
-            // }
+            const nom = req.body.nom;
+            const prenom = req.body.prenom;
+            const email = req.body.email;
+            const motdepasse = req.body.motdepasse;
 
             console.log("nom :", nom);
             console.log("prenom :", prenom);
@@ -78,7 +77,7 @@ module.exports = {
                     }
 
                     console.log("Inscription réussie :", resultat);
-                    res.redirect("/");
+                    res.redirect("/accueil");
                 });
             });
 
