@@ -14,30 +14,68 @@
 <%- include('partials/navbar') %>
 
 <body>
-    <h3 class="form-title">Modifier mon profil:</h3>
+    
+    <br> <br> <br> <br>
+    <!-- <br> -->
 
-    <br> <br> <br> <br><br>
+<h3 class="form-title">Modifier mon profil:</h3>
 
-    <form action="/modifierprofil" method="post">
-        <fieldset>
-            <p><%= prenom %> <%= nom %></p>
-            <button>Modifier</button>
-        <input type="text" placeholder="" >
-        <br> <br>
-        <p><%= email %></p><br>
-        <button>Modifier</button>
-        <input type="text" placeholder="" value="">
+<form action="/modifierprofil" method="post">
+    <fieldset>
+        <!-- Nom -->
+        <i class="fa fa-user icon"></i>
+        <p><%= prenom %> <%= nom %></p>
+        <button type="button" class="btn" onclick="openInput('nameInput')">Modifier</button> <!-- Bouton Modifier -->
         <br> 
-        <input type="text" placeholder="Entrez votre ancien mot de passe">
-        <br> <br>
-        <input type="text" placeholder="Entrez votre nouveau mot de passe">
-        <br> <br>
-        <button class="submit-btn">Enregistrer</button>
-        </fieldset>
-    </form>
-    <br> <br> <br> <br><br>
+        <div id="nameInput" style="display: none;">
+            <input type="text" placeholder="Entrez votre nom complet">
+            <br><br>
+            <button type="button" class="btn" onclick="closeInput('nameInput')">Annuler</button> <!-- Bouton Annuler -->
+            <br><br>
+        </div>
+
+        <!-- Email -->
+        <i class="fa fa-envelope icon"></i>
+        <p><%= email %></p>
+        <button type="button" class="btn" onclick="openInput('emailInput')">Modifier</button>
+        <br> 
+        <div id="emailInput" style="display: none;">
+            <input type="text" placeholder="Entrez votre adresse mail" value="">
+            <br><br>
+            <button type="button" class="btn" onclick="closeInput('emailInput')">Annuler</button>
+            <br><br>
+        </div>
+
+        <!-- Mot de passe -->
+        <i class="fa fa-key icon"></i>
+        <p><%= motdepasse %> ************</p>
+        
+        <button type="button" class="btn" onclick="openInput('passwordInput')">Modifier</button>
+        <br> 
+        <div id="passwordInput" style="display: none;">
+            <input type="password" placeholder="Entrez votre ancien mot de passe">
+            <br><br>
+            <input type="password" placeholder="Entrez votre nouveau mot de passe">
+            <br><br>
+            <button type="button" class="btn" onclick="closeInput('passwordInput')">Annuler</button>
+        </div>
+        <br>
+        <button class="btn">Enregistrer</button>
+    </fieldset>
+</form>
+<br><br><br><br><br>
 
 </body>
+
+<script>
+function openInput(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeInput(id) {
+    document.getElementById(id).style.display = "none";
+}
+</script>
 
 <%- include('partials/footer') %>
 

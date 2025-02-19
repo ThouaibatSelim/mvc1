@@ -51,11 +51,21 @@ fieldset input:focus {
     color: white;
 }
 
+.icon {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    min-width: 50px;
+    text-align: center;
+}
+
 /* bouton */
-.submit-btn {
+.btn{
     font-family: Kanit, sans-serif;
-    color: #333;
-    background-color: #FAF5E9;
+    color:#FAF5E9 ;
+    background-color: #333;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -64,11 +74,11 @@ fieldset input:focus {
     margin: 0 auto;
 }
 
-.submit-btn:hover {
-    background-color: #333;
-    color: white;
+.btn:hover {
+    background-color:white ;
+    color: #333;
 }
 
-.submit-btn:active{
+.btn:active{
     transform: scale(0.9);
 }

@@ -5,10 +5,6 @@ const app = require("./app.js");
 
 require("dotenv").config();
 
-//Port 3005
-// const numPort = 3005;
-// app.set("port", numPort);
-
 //Création du serveur
 const server = http.createServer(app);
 
