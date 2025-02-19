@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inscription.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c9896cdd0f.js" crossorigin="anonymous"></script>
     <title>Modifier Mon Profil</title>
 </head>
+
+<%- include('partials/navbar') %>
+
 <body>
+    <h3 class="form-title">Modifier mon profil:</h3>
+
+    <br> <br> <br> <br><br>
+
     <form action="/modifierprofil" method="post">
-        <input type="text" placeholder="Entrez votre ancienne adresse mail">
+        <fieldset>
+            <p><%= prenom %> <%= nom %></p>
+            <button>Modifier</button>
+        <input type="text" placeholder="" >
         <br> <br>
-        <input type="text" placeholder="Entrez votre nouvelle adresse mail">
-        <br> <br>
+        <p><%= email %></p><br>
+        <button>Modifier</button>
+        <input type="text" placeholder="" value="">
+        <br> 
         <input type="text" placeholder="Entrez votre ancien mot de passe">
         <br> <br>
         <input type="text" placeholder="Entrez votre nouveau mot de passe">
-
-        <button>Enregistrer</button>
+        <br> <br>
+        <button class="submit-btn">Enregistrer</button>
+        </fieldset>
     </form>
+    <br> <br> <br> <br><br>
+
 </body>
+
+<%- include('partials/footer') %>
+
 </html>

@@ -39,6 +39,7 @@ nav {
 
 .nav-left, .nav-right {
     display: flex;
+    padding-right: 30px;
 }
 
 .nav-right .inscription{
@@ -68,6 +69,7 @@ li {
     list-style: none;
 }
 
+/* Liens */
 a {
     text-decoration: none;
     color: #FAF5E9;

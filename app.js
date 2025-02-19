@@ -3,6 +3,8 @@ const express = require("express");
 const fs = require("fs");
 const mysql2 = require('mysql2');
 const myConnection = require("express-myconnection");
+require("dotenv").config();
+
 
 //app type express
 const app = express();
@@ -21,11 +23,11 @@ app.use(session({
 
 //connection base de données
 const connection = {
-    host : 'localhost',
-    user : 'root',
-    password : 'mythouaiL9222',
-    port : 3306,
-    database : 'chainetv'
+    host : process.env.HOST,
+    user : process.env.USER,
+    password : process.env.PASSWORD,
+    port : process.env.PORT,
+    database : process.env.DB
 };
 
 //Vues
@@ -81,100 +83,8 @@ app.use('/', recrutementRoutes);
 const profilRoutes = require("./routes/profil");
 app.use("/", profilRoutes);
 
-// const modifierprofilRoutes = require("./routes/modifierprofil");
-// app.use("/",  modifierprofilRoutes);
-
-
-// // accueil
-// app.get("/accueil", (req, res) => {
-//     //renvoyer la page accueil
-//         res.render("accueil");
-//     });
-
-// //programme tv
-// app.get("/ptv", (req, res) => {
-
-//     req.getConnection((erreur, connection) => {
-//         if(erreur) {
-//             console.log(erreur);
-//         } else{
-//             connection.query("SELECT * FROM programmediffusion", [], (err, resultat) => {
-//                 if (err){
-//                     console.log(err);
-//                 } else {
-//                     console.log("resultat: ", resultat);
-//                     res.render("ptv", {resultat});
-//                 }
-
-//                 })
-//             }
-//         })
-//     });
-
-// //contact
-// app.get("/contact", (req, res) => {
-//     //renvoyer la page accueil
-//         res.render("contact");
-//     });
-
-// //direct
-// app.get("/direct", (req, res) => {
-//     //renvoyer la page accueil
-//         res.render("direct");
-//     }); 
-
-// //nouveautés
-// app.get("/nouveautes", (req, res) => {
-//     //renvoyer la page accueil
-//         res.render("nouveautes");
-//     });
-
-
-//A propos
-// app.get("/apropos", (req, res) => {
-//     //renvoyer la page à propos de nous
-
-//     req.getConnection((erreur, connection) => {
-//         if(erreur) {
-//             console.log(erreur);
-//         } else{
-//             connection.query("SELECT * FROM equipe WHERE id = 1", [], (err, resultat) => {
-//                 if (err){
-//                     console.log(err);
-//                 } else {
-//                     console.log("resultat: ", resultat);
-//                     res.render("apropos", {resultat});
-//                 }
-
-//                 })
-//             }
-//         })
-//     });
-
-//     //formulaire programme tv
-// app.post("/formptv", (req, res) => {
-//     //renvoyer la page accueil
-//         res.render("formptv");
-//     });
-
-
-// //recrutement
-// app.post("/recrutement", (req, res) => {
-//     //renvoyer la page accueil
-//         res.render("recrutement");
-//     });
-
-// // Connexion
-// app.post("/connexion", (req, res) => {
-//     //renvoyer la page connexion
-//         res.render("connexion");
-//     });
-
-// //Inscription
-// app.post("/inscription", (req, res) => {
-//     //renvoyer la page inscription
-//         res.render("inscription");
-//     });
+const modifierprofilRoutes = require("./routes/modifierprofil");
+app.use("/",  modifierprofilRoutes);
 
 
 // export de l'application
